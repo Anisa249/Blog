@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <head>
 </head><body>
-<h1> HTML comment box using PHP and MYSQL</h1>
 <form action="comment_post.php" name="comments" method="post" enctype="multipart/form-data">
-name:
+Name:
 <br />
 <input type="text" name="name">
 <br />
-comment: <br />
+Comment: <br />
 <textarea name="comment" rows="2" cols="50"></textarea>
 <br />
-<input type="submit" value="submit !">
+<input type="submit" value="Submit">
 </form>
 <br /></body></html>
 <?php
-$user = '';
+$user = 'root';
 $password = '';
 $db = 'comments';
-$host = 'localhost';
-$conn= mysqli_connect( $host, "", "", $db);
-$sql = "SELECT * FROM comments" ;
-$result=mysqli_query($conn,$sql);
-    if (!$conn) {
-        echo "Unable to connect to DB: " . mysqli_error();
-        exit;
+$mysqli = new mysqli("localhost", $user, $password, $db);
+$query = "SELECT * FROM table_name";
+if ($result = $mysqli->query($query)) {
+    while ($row = $result->fetch_assoc()) {
+        $field1name = $row["col1"];
+        $field2name = $row["col2"];
+        
+ 
+        echo '<tr> 
+                  <td>'.$field1name.'</td> 
+                  <td>'.$field2name.'</td> 
+              </tr>';
     }
-    else
-  {
-      while($row = mysqli_fetch_assoc($result))
-   {
-    $name=$row['name'];
-    $comment=$row['comment'];
-    echo'<font size="4" color="purple"> <b> '.$name. ' </b>: '.$comment.' </font> <hr></div> ';
-       
-    }
-   }
+    $result->free();
+} 
+?>
