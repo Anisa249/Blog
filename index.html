@@ -108,19 +108,107 @@ Released   : 20121026
             <h2>What are Servers and how do they hold data?</h2>
             <div class="article-info">Posted on <time datetime="2013-05-14">14 May</time> by <a href="#" rel="author">Victoria</a></div>
 
-            <img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSvDvP0XrCCZVRomiA6w32xhjjBnWyuaFdyLcm32_gx0xUZVwD4&usqp=CAU" 
+        <!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="img1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="img2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="img3.jpg" style="width:100%">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+<script type="text/javascript">
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+
+</script>
+
+             <!--<img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSvDvP0XrCCZVRomiA6w32xhjjBnWyuaFdyLcm32_gx0xUZVwD4&usqp=CAU" 
              height="800" width="900"
-             style="float: left; margin-right: 10px; margin bottom: 10px" > </a>
+             style="float: left; margin-right: 10px; margin bottom: 10px" > </a>-->
 
             <p>“How do servers work?” is more than just sharing a bit of trivial pursuit info….  Servers work through a fairly simple system of request and response serving up pages of web content that you’ve requested (their work).</p>
 
-            <p> Without servers, the world-wide-web simply wouldn’t be able to exist. Every time you open a new web page or do some online shopping, an array of near-instant processes are taking place in a server somewhere. Servers are the powerhouses of the online experience, working to deliver all the elements, widgets and visuals we take for granted on even the simplest website.  It’s also great basic information to have before you choose a hosting account for your business.  Savvy shoppers know what servers need to do – and what servers to avoid.</p>    
+            <p> Without servers, the world-wide-web simply wouldn’t be able to exist. Every time you open a new web page or do some online shopping, an array of near-instant processes are taking place in a server somewhere. Servers are the powerhouses of the online experience, working to deliver all the elements, widgets and visuals we take for granted on<span id="dots">...</span><span id="more"> even the simplest website.  It’s also great basic information to have before you choose a hosting account for your business.  Savvy shoppers know what servers need to do – and what servers to avoid.    
 
-            <p>In this piece, we’re going to break down exactly how a server works, looking at what happens when someone types in a website address onwards. We’ll also cover the different types of servers out there and which factors make for the best server hosting performance.</p>
+           In this piece, we’re going to break down exactly how a server works, looking at what happens when someone types in a website address onwards. We’ll also cover the different types of servers out there and which factors make for the best server hosting performance.</span></p>
             
 
-        <a href="#" class="button">Read more</a>
-        <a href="#" class="button button-reversed">Comments</a>
+        <a onclick="myFunction()" id="myBtn" class="button">Read more</a>
+
+    <script>
+    function myFunction() 
+     {
+         var dots = document.getElementById("dots");
+         var moreText = document.getElementById("more");
+         var btnText = document.getElementById("myBtn");
+
+         if (dots.style.display === "none")
+         {
+          dots.style.display = "inline";
+          btnText.innerHTML = "Read more"; 
+          moreText.style.display = "none";
+         } 
+         else 
+         {
+          dots.style.display = "none";
+          btnText.innerHTML = "Read less"; 
+          moreText.style.display = "inline";
+         }
+    }
+    </script>
 
 
         
@@ -131,7 +219,7 @@ Released   : 20121026
                     <h3>What are Servers</h3>
             <div class="article-info">Posted on <time datetime="2013-05-14">14 May</time> by <a href="#" rel="author">Victoria</a></div>
 
-            <img src ="https://www.thecoderpedia.com/wp-content/uploads/2020/02/network-2402637_1280.jpg" 
+            <img src ="img4.jpg" 
              height="500" width="700"
              style="float: left; margin-right: 10px; margin bottom: 10px" > </a>
 
@@ -159,15 +247,76 @@ Released   : 20121026
                 <li>The file name ("web-server.html"): The file name relates to all files like images, computer language stylesheets (like CSS and HTML), fonts and more, that are relevant to a particular website.</li>
             </ol>
 
-            <p>The browser translates the server name into an IP address and the IP address is how a browser connects to the Web server. Your browser connects to the server at that specific IP address.Your IP address is assigned by your Internet service provider and most change each time you log on. But a server always has the same IP address. This is how your browser uses a Web server’s IP address to access a website’s specific HTML code so that you can pull up the site.
-            Once your machine and the Web server connect, your browser sends a request to the server asking for the particular file. This is the specific page within a website that you’ve included in the URL you typed in your browser.</p>
+            <p>The browser translates the server name into an IP address and the IP address is how a browser connects to the Web server. Your browser connects to the server at that specific IP address.Your IP address is assigned by your Internet service provider and most change each time you log on. But a server always has the same IP address. This is how your browser uses a Web server’s IP address to access a website’s specific <span id="dots1">...</span><span id="more1"> HTML code so that you can pull up the site. Once your machine and the Web server connect, your browser sends a request to the server asking for the particular file. This is the specific page within a website that you’ve included in the URL you typed in your browser.
 
-            <p>When your browser has connected to the server at the right IP address, the server sends all the HTML text for the Web page you requested to your browser. From there, your browser converts the data into the Web page that pops up on your screen. What’s amazing is that this all happens in seconds!All that information is exchanged and you land on the exact Web page you want.</p>
+            When your browser has connected to the server at the right IP address, the server sends all the HTML text for the Web page you requested to your browser. From there, your browser converts the data into the Web page that pops up on your screen. What’s amazing is that this all happens in seconds!All that information is exchanged and you land on the exact Web page you want.</span></p>
 
-        <a href="#" class="button">Read more</a>
-        <a href="#" class="button button-reversed">Comments</a>
+        <a onclick="myFunction1()" id="myBtn1" class="button">Read more</a>
+
+    <script>
+    function myFunction1() 
+     {
+         var dots = document.getElementById("dots1");
+         var moreText = document.getElementById("more1");
+         var btnText = document.getElementById("myBtn1");
+
+         if (dots.style.display === "none")
+         {
+          dots.style.display = "inline";
+          btnText.innerHTML = "Read more"; 
+          moreText.style.display = "none";
+         } 
+         else 
+         {
+          dots.style.display = "none";
+          btnText.innerHTML = "Read less"; 
+          moreText.style.display = "inline";
+         }
+    }
+    </script>
+
+        <form action="comment_post.php" name="comments" method="post" enctype="multipart/form-data">
+        <a onclick="showCommentBox()" class="button">Comments</a><br>
+        <div class="hidden" id="comment">
+
+        Name:
+        <br />
+        <input type="text" name="name">
+        <br />
+        Comment: <br />
+        <textarea name="comment" rows="2" cols="50"></textarea>
+        <br />
+        <input type="submit" value="Submit">
+        </form>
+
+        
+
+        <script type="text/javascript">
+        function showCommentBox(){
+        var div=document.getElementById('comment');
+        div.className='visible';
+        }
+        </script>
+
+
+
+       
         </article>
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
         <aside class="sidebar big-sidebar right-sidebar">
     
@@ -260,6 +409,40 @@ Released   : 20121026
                 <li><a href="#">Curabitur sit amet tellus</a></li>
                 <li><a href="#">Donec in ligula nisl.</a></li>-->
             </ul>
+
+
+
+
+       <button onclick="topFunction()" id="myBtn2" title="Go to top">Top</button>
+
+<script type="text/javascript">
+//Get the button:
+mybutton = document.getElementById("myBtn2");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+</script>
+
+
+
+
+
+
             
             <ul class="endfooter">
                 <li><h4>Pages</h4></li>
@@ -290,6 +473,7 @@ Released   : 20121026
 </html>
 
 	<!-- end #page
+
 
 
 
