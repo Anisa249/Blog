@@ -13,15 +13,14 @@ Comment: <br />
 </form>
 <br /></body></html>
 <?php
-$user = 'root';
-$password = '';
-$db = 'comments';
-$mysqli = new mysqli("localhost", $user, $password, $db);
-$query = "SELECT * FROM table_name";
-if ($result = $mysqli->query($query)) {
+
+$mysqli = new mysqli("localhost", "root", "", "comments");
+// $a = ;
+$result = $mysqli->query("SELECT * FROM comments")) 
+
     while ($row = $result->fetch_assoc()) {
-        $field1name = $row["col1"];
-        $field2name = $row["col2"];
+        $field1name = $row["Name"];
+        $field2name = $row["Comment"];
         
  
         echo '<tr> 
@@ -30,5 +29,5 @@ if ($result = $mysqli->query($query)) {
               </tr>';
     }
     $result->free();
-} 
+
 ?>
